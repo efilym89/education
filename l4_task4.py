@@ -2,9 +2,9 @@
 Сформировать итоговый массив чисел, соответствующих требованию.
 Элементы вывести в порядке их следования в исходном списке.
 Для выполнения задания обязательно использовать генератор."""
-
-my_list = [10, 20, 25, 30, 40, 20, 27, 40, 55, 66, 77, 77, 88, 66]
-new_list = [itm for itm in my_list if itm not in my_list]
+from collections import Counter
+my_list = Counter([10, 20, 25, 30, 40, 20, 27, 40, 55, 66, 77, 77, 88, 66])
+new_list = [key for key, values in my_list.items() if values == 1]
 print(new_list)
 
 
