@@ -18,30 +18,3 @@ with open('file_task_3.txt') as file:
 
     average = sum(result_2)/len(result_1)
     print('average earnings per employee', average, '$')
-
-
-
-
-
-
-
-
-
-
-
-
-
-# file = open('file_task_3.txt', 'r')
-# lines = file.readlines()
-#
-# for itm in lines:
-#     print(itm.split(' '))
-#
-# list_1 = itm[0]
-# list_2 = itm[1]
-#
-# print(list_1)
-#
-# file.close()
-
-
