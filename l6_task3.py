@@ -13,17 +13,41 @@ class Worker:
         self.name = name
         self.surname = surname
         self.position = position
-        self._income = _income
+        self._income = dict(_income)
 
 
 class Position(Worker):
-    def get_full_name(self, name, surname):
-        super.__init__(self.name, self.surname)
-        return name + surname
+    def get_full_name(self):
+        return print(self.name, self.surname)
+
+    def get_total_income(self):
+        result = sum(self._income.values())
+        return result
 
 
-incognito = Position()
+inc = Position(name='Brat', surname='Pitt', position='actor', _income={'wage': 5000, 'bonus': 500})
 
+
+"""Вариант решения номер 2"""
+
+
+# class Worker:
+#     name = 'Brat'
+#     surname = 'Pitt'
+#     position = 'actor'
+#     _income = {'wage': 5000, 'bonus': 500}
+#
+#
+# class Position(Worker):
+#     def get_full_name(self):
+#         return print(self.name, self.surname)
+#
+#     def get_total_income(self):
+#         result = sum(self._income.values())
+#         return result
+#
+#
+# inc = Position()
 
 
 print('1')

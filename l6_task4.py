@@ -8,3 +8,45 @@ WorkCar, PoliceCar. Добавьте в базовый класс метод sho
 Создайте экземпляры классов, передайте значения атрибутов.
 Выполните доступ к атрибутам, выведите результат. Выполните вызов методов и также покажите результат."""
 
+
+class Car:
+    def __init__(self, speed, color, name, is_police):
+        self.speed = speed
+        self.color = color
+        self.name = name
+        self.is_police = bool(is_police)
+
+    def go(self):
+        print(self.name, 'start')
+
+    def stop(self):
+        print(self.name, 'stop')
+
+    def turn(self, a: str):
+        if a == 'right':
+            print(self.name, 'turn right')
+        elif a == 'left':
+            print(self.name, 'turn left')
+
+    def show_speed(self):
+        print(self.speed)
+
+
+class TownCar(Car):
+    def show_speed(self):
+        if self.speed > 60:
+            print(self.speed, 'over speed limit')
+        else:
+            print(self.speed)
+
+
+class WorkCar(Car):
+    def show_speed(self):
+        if self.speed > 40:
+            print(self.speed, 'over speed limit')
+
+
+my_car = WorkCar(30, 'green', 'Mazda', False)
+she_car = TownCar(50, 'red', 'Mini Cooper', False)
+
+print('1')

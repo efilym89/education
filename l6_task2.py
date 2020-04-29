@@ -7,7 +7,6 @@
 
 
 class Road:
-
     def __init__(self, _length: int, _width: int):
         self._length = _length
         self._width = _width
