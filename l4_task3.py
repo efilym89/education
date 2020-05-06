@@ -3,5 +3,6 @@
 Подсказка: использовать функцию range() и генератор."""
 
 my_list = [itm for itm in range(20, 240) if itm % 21 == 0]
+
 print(my_list)
 

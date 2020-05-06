@@ -6,6 +6,7 @@ from collections import Counter
 
 my_list = Counter([10, 20, 25, 30, 40, 20, 27, 40, 55, 66, 77, 77, 88, 66])
 new_list = [key for key, values in my_list.items() if values == 1]
+
 print(new_list)
 
 

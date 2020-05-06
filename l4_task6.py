@@ -5,6 +5,7 @@
 
 from itertools import count, cycle
 
+
 for itm in count(10):
     if itm > 100:
         break
