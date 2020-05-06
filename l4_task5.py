@@ -18,7 +18,6 @@ for itm in range(start, stop, step):
 
 print(my_list)
 
-# начиная отсюда, код я скопировал с сайта где был приведен пример.
-# Я только заменил название списка на совой.
 sum_all = reduce(lambda x, y: x + y, my_list)
 print(sum_all)
+
