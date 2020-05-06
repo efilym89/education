@@ -6,6 +6,7 @@
 my_list = [1, 5, 2, 7, 6, 8]
 
 new_list = [my_list[itm] for itm in range(1, len(my_list)) if my_list[itm] > my_list[itm - 1]]
+
 print(new_list)
 
 
