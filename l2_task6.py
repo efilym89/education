@@ -20,3 +20,44 @@
 }"""
 
 
+# Делаем шаблон продукта по которому будет идти заполнение.
+product_template = {
+    # value это вопрос который задается пользователю во время заполнения товара
+    # и указывает на тип данных который мы ожидаем
+    'name': ('product_name', str),
+    'model': ('product_model', str),
+    'price': ('product_price', int),
+    'quantity': ('product_quantity', int)
+}
+
+next_enter = True
+
+auto_inc = 1
+product_list = []
+
+while next_enter:
+    # Создаем словарь пустой куда будет заполнятся продукт
+    product = {}
+    # Заполняем словарь по шаблону
+    for key, value in product_template.items():
+        # Цикл while True для того, что бы переспросить вопрсо если будет невверный ввод по типу
+        while True:
+            user_value = input(f'{value[0]}\n')
+            try:
+                # Вызываем функцию и преобразуем ее к типу данных, которые мы ожидаем
+                user_value = value[1](user_value)
+            except ValueError as e:
+                print(f'{e}\nНе верное значение данных')
+                continue
+            product[key] = user_value
+            break
+    product_list.append((auto_inc, product))
+    auto_inc += 1
+
+    while True:
+        next_add = input('Добавить еще продукт? ДА/НЕТ\n')
+        if next_add.lower() in ('да', 'нет'):
+            next_enter = next_add.lower() == 'да'
+            break
+        else:
+            print('Не верный код')
