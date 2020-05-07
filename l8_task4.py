@@ -34,7 +34,3 @@ class Xerox(Equipment):
     name = 'Sumsung'
     weight = 12
 
-
-def enter(*args, **kwargs):
-
-
