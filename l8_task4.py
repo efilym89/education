@@ -5,16 +5,12 @@
 
 
 class Warehouse:
-    def __init__(self, city, area, worker):
-        self.cite = city
-        self.area = area
-        self.worker = worker
+    rack = []
 
 
 class Equipment:
-    def __init__(self, color, material):
-        self.color = color
-        self.material = material
+    color = 'grey'
+    material = 'plastic'
 
 
 class Printer(Equipment):
@@ -31,6 +27,5 @@ class Scan(Equipment):
 
 class Xerox(Equipment):
     name = 'Xerox'
-    name = 'Sumsung'
+    model = 'Sony'
     weight = 12
-

@@ -1,19 +1,23 @@
 """5. Продолжить работу над первым заданием. Разработать методы, отвечающие за приём оргтехники
 на склад и передачу в определенное подразделение компании. Для хранения данных о наименовании и
 количестве единиц оргтехники, а также других данных, можно использовать любую подходящую структуру, например словарь."""
-from l8_task4 import Printer, Scan, Xerox
+from l8_task4 import Warehouse, Printer, Xerox, Scan
 
-test = Xerox
-test_2 = Printer
-test_3 = Scan
+enter = input('Enter item:\n')
+enter_2 = int(input('Enter quantity\n'))
+if enter == 'xerox':
+    item = Xerox
+if enter == 'printer':
+    item = Printer
+if enter == 'scaner':
+    item = Scan
 
-inquiry = {
-            'item': test.name,
-            'color': test.color,
-            'material': test.material,
-            'weight': test.weight
-           }
+product = {'name': item.name,
+            'model': item.model,
+            'color': item.color,
+            'material': item.material,
+            'weight': item.weight,
+            'quantity': enter_2}
 
-print(inquiry)
-print(type(inquiry))
-
+Warehouse.rack.append(product)
+print(Warehouse.rack)
